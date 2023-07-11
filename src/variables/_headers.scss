@@ -1,0 +1,7 @@
+@use "./colors" as c;
+
+@mixin header-one {
+  color: c.$secondary-color-main;
+  font-size: 28px;
+  font-weight: 700;
+}

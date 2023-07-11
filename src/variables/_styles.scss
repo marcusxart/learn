@@ -1,0 +1,83 @@
+@use "./colors" as c;
+@mixin primary-button {
+  background-color: c.$primary-color-main;
+  padding: 11px;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  width: calc(100% - 30px);
+  cursor: pointer;
+  margin-bottom: 35px;
+  box-shadow: 0px 10px 20px rgba(254, 191, 16, 0.25);
+}
+@mixin input {
+  padding: 11px 20px;
+  color: c.$neutral-70;
+  border-radius: 12px;
+  transition: 0.4s all;
+  border: 1px solid c.$secondary-color-main;
+  font-size: 16px;
+  &::placeholder {
+    color: c.$neutral-40;
+  }
+  &.error {
+    border-color: c.$error;
+  }
+}
+
+@mixin inputLabel {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+  .message {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    font-size: 15px;
+  }
+  span {
+    font-size: 14px;
+    font-weight: 600;
+    color: c.$neutral-70;
+  }
+  input,
+  .input-box {
+    @include input;
+  }
+
+  &.error {
+    .message {
+      color: c.$error;
+      display: block;
+    }
+    input {
+      border-color: c.$error;
+    }
+  }
+}
+
+@mixin scrollBars(
+  $size: 8px,
+  $foreground-color: c.$neutral-40,
+  $background-color: transparent
+) {
+  // For Chrome & Safari
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+  // Standard version (Firefox only for now)
+  scrollbar-color: $foreground-color $background-color;
+}
