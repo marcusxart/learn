@@ -7,7 +7,6 @@ import PlayIcon from "../../assets/svg/playIcon";
 
 const UploadFile = ({ label, value, onSelect, type = "image" }) => {
   const inputRef = useRef(null);
-  console.log(value);
 
   return (
     <UploadFileContainer>

@@ -1,50 +1,50 @@
 const TrashIcon = ({ onClick }) => {
   return (
     <svg
-      width="26"
+      onClick={onClick}
+      width="25"
       height="25"
-      viewBox="0 0 26 25"
+      viewBox="0 0 25 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={onClick}
     >
       <path
-        d="M18.6312 8.53598C16.4404 8.31887 14.2364 8.20703 12.0391 8.20703C10.7364 8.20703 9.4338 8.27282 8.13117 8.4044L6.78906 8.53598"
+        d="M18.4222 8.53988C16.2314 8.32278 14.0274 8.21094 11.8301 8.21094C10.5274 8.21094 9.22481 8.27673 7.92218 8.40831L6.58008 8.53988"
         stroke="#F95454"
         strokeWidth="0.986842"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M10.4062 7.87582L10.551 7.01398C10.6563 6.38898 10.7352 5.92188 11.847 5.92188H13.5707C14.6826 5.92188 14.7681 6.4153 14.8668 7.02056L15.0115 7.87582"
+        d="M10.1973 7.87582L10.342 7.01398C10.4473 6.38898 10.5262 5.92188 11.6381 5.92188H13.3617C14.4736 5.92188 14.5591 6.4153 14.6578 7.02056L14.8025 7.87582"
         stroke="#F95454"
         strokeWidth="0.986842"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M17.2163 10.6172L16.7887 17.2422C16.7163 18.2751 16.6571 19.0777 14.8215 19.0777H10.5979C8.76234 19.0777 8.70313 18.2751 8.63076 17.2422L8.20312 10.6172"
+        d="M17.0073 10.6172L16.5797 17.2422C16.5073 18.2751 16.4481 19.0777 14.6126 19.0777H10.3889C8.55335 19.0777 8.49414 18.2751 8.42177 17.2422L7.99414 10.6172"
         stroke="#F95454"
         strokeWidth="0.986842"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M11.6094 15.4609H13.8002"
+        d="M11.4023 15.4609H13.5931"
         stroke="#F95454"
         strokeWidth="0.986842"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M11.0625 12.8281H14.352"
+        d="M10.8555 12.8281H14.1449"
         stroke="#F95454"
         strokeWidth="0.986842"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <rect
-        x="0.539885"
+        x="0.328947"
         y="0.328947"
         width="24.3421"
         height="24.3421"
@@ -55,4 +55,5 @@ const TrashIcon = ({ onClick }) => {
     </svg>
   );
 };
+
 export default TrashIcon;

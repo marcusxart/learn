@@ -1,5 +1,3 @@
-import React from "react";
-
 const Delete = () => {
   return (
     <svg
@@ -7,7 +5,8 @@ const Delete = () => {
       height="38"
       viewBox="0 0 38 38"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <rect x="0.5" y="0.5" width="37" height="37" rx="9.5" fill="white" />
       <path
         d="M28 12.9805C24.67 12.6505 21.32 12.4805 17.98 12.4805C16 12.4805 14.02 12.5805 12.04 12.7805L10 12.9805"
@@ -55,7 +54,8 @@ export const DeleteLight = () => (
     height="24"
     viewBox="0 0 24 24"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <g clipPath="url(#clip0_5230_146897)">
       <path
         d="M16 9V19H8V9H16ZM14.5 3H9.5L8.5 4H5V6H19V4H15.5L14.5 3ZM18 7H6V19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7Z"

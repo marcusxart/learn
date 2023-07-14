@@ -1,14 +1,19 @@
-export const PlayIcon = ({ width, height, fill }) => (
-  <svg
-    width={width || "17"}
-    height={height || "19"}
-    viewBox="0 0 17 19"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M0 3.19438V15.1569C0 17.6069 2.6625 19.1444 4.7875 17.9194L9.975 14.9319L15.1625 11.9319C17.2875 10.7069 17.2875 7.64438 15.1625 6.41938L9.975 3.41938L4.7875 0.431885C2.6625 -0.793115 0 0.731884 0 3.19438Z"
-      fill={fill || "#FEBF10"}
-    />
-  </svg>
-);
+const PlayIcon = ({ onClick, fill }) => {
+  return (
+    <svg
+      onClick={onClick}
+      width="800px"
+      height="800px"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M21.4086 9.35258C23.5305 10.5065 23.5305 13.4935 21.4086 14.6474L8.59662 21.6145C6.53435 22.736 4 21.2763 4 18.9671L4 5.0329C4 2.72368 6.53435 1.26402 8.59661 2.38548L21.4086 9.35258Z"
+        fill={fill || "#1C274C"}
+      />
+    </svg>
+  );
+};
+
+export default PlayIcon;

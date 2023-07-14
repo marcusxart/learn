@@ -8,6 +8,7 @@ import OtherProfile from "./pages/other profile";
 import ManageCourses from "./pages/manage courses";
 import CreateCourse from "./pages/create course";
 import CourseDraft from "./pages/course draft";
+import CourseDetails from "./pages/courseDetails";
 const routes = createBrowserRouter(
   [
     {
@@ -29,10 +30,14 @@ const routes = createBrowserRouter(
         },
         {
           path: "manage-courses",
+          children: [{ index: true, element: <ManageCourses /> }],
+        },
+        {
+          path: "courses",
           children: [
-            { index: true, element: <ManageCourses /> },
             { path: "create-course", element: <CreateCourse /> },
             { path: "draft", element: <CourseDraft /> },
+            { path: "details", element: <CourseDetails /> },
           ],
         },
       ],
