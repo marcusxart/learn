@@ -11,13 +11,15 @@ const UserSwitchHeader = ({ title }) => {
           className={switchUser === 1 ? "active" : ""}
           onClick={() => setSwitchUser(1)}
         >
-          Personal
+          <span>My Account</span>
+          <span className="circle"></span>
         </button>
         <button
           className={switchUser === 2 ? "active" : ""}
           onClick={() => setSwitchUser(2)}
         >
-          Enterprise
+          <span>Affiliates</span>
+          <span className="circle"></span>
         </button>
       </div>
     </Container>
@@ -42,21 +44,37 @@ const Container = styled.div`
     background: #dfe6e6;
     border-radius: 10px;
     overflow: hidden;
+    display: flex;
     button {
       font-size: 14px;
       line-height: 30px;
       font-weight: 700;
       padding: 4px 15px;
       color: #4a4d4d;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       border: none;
       background: transparent;
       cursor: pointer;
       transition-property: background, color;
       transition: 0.3s ease;
+      span {
+        color: #4a4d4d;
+      }
+      .circle {
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        background-color: #febf10;
+      }
       &.active {
         background: #00c2c2;
-        color: white;
+
         border-radius: 10px;
+        span {
+          color: white;
+        }
       }
     }
   }

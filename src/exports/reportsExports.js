@@ -1,0 +1,91 @@
+import { student1, student2, student3 } from "../assets/images/students";
+export const studentData = [
+  {
+    name: "Shaney Miller",
+    image: student1,
+    rank: "Beginner",
+    coursesEnroll: 882,
+    grade: "20%",
+    isPublished: true,
+  },
+  {
+    name: "Shaney John",
+    image: student2,
+    rank: "Beginner",
+    coursesEnroll: 732,
+    grade: "15%",
+    isPublished: true,
+  },
+  {
+    name: "Shaney Desmond",
+    image: student3,
+    rank: "Beginner",
+    coursesEnroll: 965,
+    grade: "98%",
+    isPublished: false,
+  },
+  {
+    name: "Shaney Andrew",
+    image: student3,
+    rank: "Beginner",
+    coursesEnroll: 1938,
+    grade: "92%",
+    isPublished: false,
+  },
+  {
+    name: "Shaney Miller",
+    image: student1,
+    rank: "Beginner",
+    coursesEnroll: 882,
+    grade: "20%",
+    isPublished: true,
+  },
+  {
+    name: "Shaney John",
+    image: student2,
+    rank: "Beginner",
+    coursesEnroll: 732,
+    grade: "15%",
+    isPublished: true,
+  },
+  {
+    name: "Shaney Desmond",
+    image: student3,
+    rank: "Beginner",
+    coursesEnroll: 965,
+    grade: "98%",
+    isPublished: false,
+  },
+  {
+    name: "Shaney Andrew",
+    image: student3,
+    rank: "Beginner",
+    coursesEnroll: 1938,
+    grade: "92%",
+    isPublished: false,
+  },
+];
+
+export const studentDetailEnterprise = [
+  { title: "Word play", status: "incorrect", score: 0 },
+  { title: "Essay", status: "correct", score: 80 },
+  { title: "Reading Test", status: "correct", score: 75 },
+  { title: "Dialogue", status: "correct", score: 65 },
+  { title: "Sound Play", status: "correct", score: 100 },
+];
+
+export const studentDetail = [
+  { title: "Sound Play", score: 0, type: null },
+  { title: "Write Essay", score: 80, type: "written" },
+  { title: "Write Essay", score: 80, type: "Scripted" },
+  { title: "Write Essay", score: null, type: "Unscripted" },
+  { title: "Dialogue", score: 65, type: "Scripted" },
+  { title: "Dialogue", score: 65, type: "Unscripted" },
+  { title: "Wordplay", score: 65, type: "Multi Choice" },
+  { title: "Wordplay", score: 65, type: "Text" },
+  { title: "Practice Reading", score: null, type: null },
+  { title: "Q&A Quiz", score: 80, type: "Multi Choice" },
+  { title: "Q&A Quiz", score: 80, type: "Scripted" },
+  { title: "Q&A Quiz", score: 80, type: "Unscripted" },
+  { title: "Match Pairs", score: 80, type: null },
+];

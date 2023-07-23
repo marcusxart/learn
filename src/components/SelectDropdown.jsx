@@ -1,20 +1,32 @@
 import { useState } from "react";
 import { styled } from "styled-components";
 
-const SelectDropdown = ({ Icon }) => {
+const SelectDropdown = ({
+  Icon,
+  placeholder,
+  value,
+  options = [],
+  dropDownClassName,
+  onSelect,
+}) => {
   const [dropdown, setDropdown] = useState(false);
+  const handleSelect = (value) => {
+    onSelect && onSelect(value);
+    setDropdown(false);
+  };
   return (
     <Container>
       <div className="box" onClick={() => setDropdown(!dropdown)}>
-        <Icon />
-        <p>Filter</p>
+        {Icon && <Icon />}
+        <p>{value || placeholder || "Filter"}</p>
       </div>
-      {dropdown && (
-        <DropDown>
-          <li>Lorem ipsum</li>
-          <li>Lorem ipsum</li>
-          <li>Lorem ipsum</li>
-          <li>Lorem ipsum</li>
+      {dropdown && options?.length > 0 && (
+        <DropDown className={dropDownClassName}>
+          {options.map((option, idx) => (
+            <li key={idx} onClick={() => handleSelect(option)}>
+              {option}
+            </li>
+          ))}
         </DropDown>
       )}
     </Container>
@@ -28,6 +40,7 @@ const Container = styled.div`
   > .box {
     display: flex;
     gap: 10px;
+    white-space: nowrap;
     cursor: pointer;
     align-items: center;
     padding: 10px;
@@ -62,9 +75,5 @@ const DropDown = styled.ul`
     width: 100%;
     font-weight: 600;
     padding: 12px 30px;
-    &:hover {
-      background: #00c2c2;
-      color: #fff;
-    }
   }
 `;
