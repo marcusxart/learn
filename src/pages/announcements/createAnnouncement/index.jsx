@@ -5,10 +5,10 @@ import SelectAndCheckboxDropdown from "../../../components/select and checkbox d
 
 const CreateAnnouncement = () => {
   const options = [
-    "All",
-    "French for Complete beginners",
-    "French for Complete beginners",
-    "French for Complete beginners",
+    "French for Complete beginners1",
+    "French for Complete beginners2",
+    "French for Complete beginners3",
+    "French for Complete beginners4",
   ];
   return (
     <CreateAnnouncementContainer>
@@ -21,6 +21,7 @@ const CreateAnnouncement = () => {
         label="Choose Audience"
         placeholder="Select course(s)"
         options={options}
+        allSelect
       />
     </CreateAnnouncementContainer>
   );

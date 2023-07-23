@@ -2,14 +2,47 @@ import { useState } from "react";
 import { Checkbox } from "l-min-components/src/components";
 import { styled } from "styled-components";
 import ArrowDown from "../../assets/svg/arrowDown";
+import _ from "lodash";
 
 const SelectAndCheckboxDropdown = ({
   label,
   placeholder,
   value,
   options = [],
+  allSelect,
+  allText = "All",
 }) => {
   const [toggleDropdown, setToggleDropdown] = useState();
+  const [selectedList, setSelectedList] = useState([]);
+
+  const handleSelect = (selectValue) => {
+    const index = selectedList.findIndex((value) => value === selectValue);
+    if (index === -1) {
+      setSelectedList([...selectedList, selectValue]);
+    } else {
+      const newSelectedList = [...selectedList];
+      newSelectedList.splice(index, 1);
+      setSelectedList(newSelectedList);
+    }
+  };
+  const checkValveIsAvailable = (checkValue) => {
+    return selectedList?.some((value) => value === checkValue);
+  };
+
+  const handleSelectAll = () => {
+    if (selectedList.length > 0 && options.length === selectedList.length) {
+      setSelectedList([]);
+    } else {
+      const allOption = options.map((option) =>
+        option?.value ? option?.value : option
+      );
+      setSelectedList(allOption);
+    }
+  };
+  console.log(selectedList);
+  console.log(
+    _.some(selectedList, (val) => val === "French for Complete beginners1")
+  );
   return (
     <Container>
       {label && <p className="dropdown_label">{label}</p>}
@@ -22,9 +55,27 @@ const SelectAndCheckboxDropdown = ({
         </DropdownValueWrapper>
         {toggleDropdown && options?.length > 0 && (
           <DropdownList>
+            {allSelect && (
+              <li>
+                <Checkbox
+                  color="#ffb834"
+                  size="20px"
+                  onChange={handleSelectAll}
+                  checked={true}
+                />
+                <span>{allText}</span>
+              </li>
+            )}
             {options.map((option, idx) => (
               <li key={idx}>
-                <Checkbox color="#ffb834" size="20px" />
+                <Checkbox
+                  color="#ffb834"
+                  size="20px"
+                  onChange={() =>
+                    handleSelect(option?.value ? option?.value : option)
+                  }
+                  checked={true}
+                />
                 <span>
                   {option?.displayValue
                     ? option?.displayValue
@@ -87,6 +138,8 @@ const DropdownList = styled.ul`
   left: 0;
   right: 0;
   top: 64px;
+  height: 180px;
+  overflow: auto;
   z-index: 10;
   list-style: none;
   border-radius: 15px;

@@ -13,6 +13,7 @@
     "chart.js": "^4.3.0",
     "classnames": "^2.3.2",
     "l-min-components": "^1.0.251",
+    "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "prop-types": "^15.8.1",
     "rc-slider": "^10.2.1",
