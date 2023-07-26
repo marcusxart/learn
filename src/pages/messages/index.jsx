@@ -1,10 +1,12 @@
 import { MessagesContainer } from "./styles";
-import MessagesLeftSection from "./leftSection";
+import MessagesLeftSection from "./components/leftSection";
+import ChatSection from "./components/chatSection";
 
 const Messages = () => {
   return (
     <MessagesContainer>
       <MessagesLeftSection />
+      <ChatSection />
     </MessagesContainer>
   );
 };

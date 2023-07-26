@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { styled } from "styled-components";
 
-const UserSwitchHeader = ({ title }) => {
+const UserSwitchHeader = () => {
   const [switchUser, setSwitchUser] = useState(1);
   return (
     <Container>
-      <p>{title}</p>
+      <p>Frank Language Expert</p>
       <div className="btn__wrapper">
         <button
           className={switchUser === 1 ? "active" : ""}

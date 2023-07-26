@@ -9,7 +9,7 @@ import { Line } from "react-chartjs-2";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement);
 
-function GraphData() {
+function GraphData({ height, width }) {
   const labels = [
     "Jan",
     "Feb",
@@ -125,7 +125,7 @@ function GraphData() {
     ],
   };
 
-  return <Line options={options} data={data} height={"200px"} />;
+  return <Line options={options} data={data} className="line_graph" />;
 }
 
 export default GraphData;

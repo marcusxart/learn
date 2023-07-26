@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 export const ManageContainer = styled.div`
-  max-width: 824px;
   margin-left: auto;
   button {
     box-shadow: 0px 7.72826px 15.4565px rgba(254, 191, 16, 0.25);

@@ -55,36 +55,38 @@ const SelectAndCheckboxDropdown = ({
         </DropdownValueWrapper>
         {toggleDropdown && options?.length > 0 && (
           <DropdownList>
-            {allSelect && (
-              <li>
-                <Checkbox
-                  color="#ffb834"
-                  size="20px"
-                  onChange={handleSelectAll}
-                  checked={true}
-                />
-                <span>{allText}</span>
-              </li>
-            )}
-            {options.map((option, idx) => (
-              <li key={idx}>
-                <Checkbox
-                  color="#ffb834"
-                  size="20px"
-                  onChange={() =>
-                    handleSelect(option?.value ? option?.value : option)
-                  }
-                  checked={true}
-                />
-                <span>
-                  {option?.displayValue
-                    ? option?.displayValue
-                    : option?.value
-                    ? option?.value
-                    : option}
-                </span>
-              </li>
-            ))}
+            <ul>
+              {allSelect && (
+                <li>
+                  <Checkbox
+                    color="#ffb834"
+                    size="20px"
+                    onChange={handleSelectAll}
+                    checked={true}
+                  />
+                  <span>{allText}</span>
+                </li>
+              )}
+              {options.map((option, idx) => (
+                <li key={idx}>
+                  <Checkbox
+                    color="#ffb834"
+                    size="20px"
+                    onChange={() =>
+                      handleSelect(option?.value ? option?.value : option)
+                    }
+                    defaultValue={_.some(selectedList, (val) => val === option)}
+                  />
+                  <span>
+                    {option?.displayValue
+                      ? option?.displayValue
+                      : option?.value
+                      ? option?.value
+                      : option}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </DropdownList>
         )}
       </DropdownContainer>
@@ -133,28 +135,30 @@ const DropdownValueWrapper = styled.div`
   }
 `;
 
-const DropdownList = styled.ul`
+const DropdownList = styled.div`
   position: absolute;
   left: 0;
   right: 0;
   top: 64px;
-  height: 180px;
-  overflow: auto;
-  z-index: 10;
-  list-style: none;
   border-radius: 15px;
   background: #fff;
+  z-index: 10;
   padding: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  li {
+  ul {
+    list-style: none;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 15px;
-    svg {
-      path {
-        fill: #fff;
+    height: 130px;
+    overflow: auto;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      svg {
+        path {
+          fill: #fff;
+        }
       }
     }
   }

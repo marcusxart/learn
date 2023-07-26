@@ -13,8 +13,8 @@ import {
 import UserSwitchHeader from "../../components/UserSwitchHeader";
 import Sort from "./../../assets/svg/sort";
 import SelectDropdown from "../../components/SelectDropdown";
-import ActiveCoursesTable from "./ActiveCoursesTable";
-import CompleteCousesTable from "./CompleteCousesTable";
+import ActiveCoursesTable from "./components/ActiveCoursesTable";
+import CompleteCousesTable from "./components/CompleteCousesTable";
 
 const ManageCourses = () => {
   const navigate = useNavigate();
