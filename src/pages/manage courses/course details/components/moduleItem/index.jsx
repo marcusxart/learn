@@ -18,11 +18,15 @@ import ExamIcon from "../../../../../assets/svg/examIcon";
 import TrashIcon from "../../../../../assets/svg/trashIcon";
 import TrashIcon2 from "../../../../../assets/svg/trashNoBorder";
 import DeleteCourseModal from "../deleteModal";
+import AddLessonModal from "../addLessonModal";
+import EditLessonModal from "../editLessonModal";
 
 const ModuleItem = () => {
   const [isToggle, setIsToggle] = useState(false);
   const [isToggleEdit, setTsToggleEdit] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
+  const [addLesson, setAddLesson] = useState(false);
+  const [editLesson, setEditLesson] = useState(false);
   const lessons = [
     "Greetings and salutation in French ",
     "Greetings and salutation in French ",
@@ -32,7 +36,9 @@ const ModuleItem = () => {
 
   return (
     <>
+      {addLesson && <AddLessonModal close={() => setAddLesson(false)} />}
       {deleteModal && <DeleteCourseModal close={() => setDeleteModal(false)} />}
+      {editLesson && <EditLessonModal close={() => setEditLesson(false)} />}
       <ModuleItemContainer>
         <ModuleItemHeader>
           {!isToggleEdit && (
@@ -95,7 +101,7 @@ const ModuleItem = () => {
               <p>Lesson 1</p>
               <ArrowUp />
             </div>
-            {isToggleEdit && <EditIcon />}
+            {isToggleEdit && <EditIcon onClick={() => setEditLesson(true)} />}
           </div>
           <ul className="module_item_lessons">
             {lessons?.map((lesson, idx) => (
@@ -151,7 +157,14 @@ const ModuleItem = () => {
             {isToggle && (
               <div className="add_dropdown_container">
                 <ul>
-                  <li>Add Lesson</li>
+                  <li
+                    onClick={() => {
+                      setAddLesson(true);
+                      setIsToggle(false);
+                    }}
+                  >
+                    Add Lesson
+                  </li>
                   <li>Add Test</li>
                   <li>Add Module</li>
                 </ul>

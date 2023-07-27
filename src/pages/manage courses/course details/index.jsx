@@ -35,6 +35,7 @@ const CourseDetails = () => {
                   <ButtonComponent
                     text="Participants"
                     type="secondary"
+                    onClick={() => navigate("/manage-courses/participants")}
                     styles={{
                       padding: "5px 15px",
                       fontSize: "14px",
@@ -43,6 +44,7 @@ const CourseDetails = () => {
                 )}
                 <ButtonComponent
                   text="Edit course"
+                  onClick={() => navigate("/manage-courses/edit-course")}
                   styles={{
                     padding: "5px 15px",
                     fontSize: "14px",

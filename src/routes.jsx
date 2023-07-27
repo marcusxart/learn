@@ -21,6 +21,8 @@ import Announcements from "./pages/announcements";
 import AnnouncementPermission from "./pages/announcements/permission";
 import ArchiveStudents from "./pages/manage students/archive";
 import CourseParticipants from "./pages/manage courses/course participants";
+import EditCourse from "./pages/manage courses/edit course";
+import AddTest from "./pages/manage courses/add test";
 
 const routes = createBrowserRouter(
   [
@@ -53,9 +55,11 @@ const routes = createBrowserRouter(
           children: [
             { index: true, element: <ManageCourses /> },
             { path: "create-course", element: <CreateCourse /> },
+            { path: "edit-course", element: <EditCourse /> },
             { path: "draft", element: <CourseDraft /> },
             { path: "details", element: <CourseDetails /> },
             { path: "participants", element: <CourseParticipants /> },
+            { path: "add-test", element: <AddTest /> },
           ],
         },
         {

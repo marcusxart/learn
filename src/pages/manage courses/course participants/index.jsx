@@ -51,6 +51,7 @@ const CourseParticipants = () => {
               </div>
               <Button
                 text="Message"
+                onClick={() => navigate("/messages")}
                 icon={{
                   jsx: ChatIcon,
                   left: true,

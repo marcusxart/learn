@@ -13,9 +13,11 @@ import profileImg from "../../../../assets/images/profile-img-2.png";
 import Pin from "../../../../assets/svg/pin";
 import MiniMessage from "../../../../assets/svg/mini-messages";
 import StudentListModal from "../studentListModal";
+import { useNavigate } from "react-router-dom";
 
 const MessagesLeftSection = () => {
   const [toggleStudentList, setToggleStudentList] = useState();
+  const navigate = useNavigate();
   return (
     <>
       {toggleStudentList && (
@@ -23,7 +25,7 @@ const MessagesLeftSection = () => {
       )}
       <MessageLeftWrapper>
         <div className="header">
-          <h1>
+          <h1 onClick={() => navigate(-1)}>
             <ArrowLeft />
             <span>Messages</span>
           </h1>

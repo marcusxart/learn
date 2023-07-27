@@ -8,13 +8,12 @@ export const MessageLeftWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    h1,
-    .edit {
-      cursor: pointer;
-    }
+
     h1 {
       font-size: 22px;
       line-height: 40px;
+      cursor: pointer;
+      width: fit-content;
       display: flex;
       gap: 6px;
       align-items: center;

@@ -13,6 +13,8 @@ const WarningModal = ({
   messageStyles,
   subMessage,
   subMessageSyles,
+  btnXl,
+  noShadow,
 }) => {
   return (
     <Container>
@@ -32,13 +34,20 @@ const WarningModal = ({
               {subMessage}
             </p>
           )}
-          <BtnGroup>
-            <Button onClick={cancel} text="Cancel" type="secondary" />
+          <BtnGroup noShadow={noShadow}>
+            <Button
+              onClick={cancel}
+              text="Cancel"
+              type="secondary"
+              styles={{
+                width: btnXl ? "140px" : "auto",
+              }}
+            />
             <Button
               onClick={onClick}
               text={btnText || "Delete"}
               styles={{
-                boxShadow: "0px 10px 20px 0px rgba(254, 191, 16, 0.25)",
+                width: btnXl ? "140px" : "auto",
               }}
             />
           </BtnGroup>
@@ -127,4 +136,9 @@ const BtnGroup = styled.div`
   margin-top: 35px;
   gap: 13px;
   margin-bottom: 5px;
+
+  button {
+    box-shadow: ${({ noShadow }) =>
+      noShadow ? "none" : ` "0px 10px 20px 0px rgba(254, 191, 16, 0.25)`};
+  }
 `;
