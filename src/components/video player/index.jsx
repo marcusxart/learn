@@ -10,7 +10,7 @@ import VideoScreenIcon from "../../assets/svg/videoScreenIcon";
 import PlayIcon from "../../assets/svg/play";
 import PauseIcon from "../../assets/svg/pause";
 
-const VideoPlayer = ({ width, height = "388px", style }) => {
+const VideoPlayer = ({ width, height = "388px", style, src }) => {
   const [player, setPlayer] = useState({
     playing: false,
     played: 0,
@@ -103,7 +103,10 @@ const VideoPlayer = ({ width, height = "388px", style }) => {
         width="100%"
         ref={playerRef}
         height="100%"
-        url="https://joy1.videvo.net/videvo_files/video/free/video0474/small_watermarked/_import_61ea3dd6ab62a0.19123787_preview.mp4"
+        url={
+          src ||
+          "https://joy1.videvo.net/videvo_files/video/free/video0474/small_watermarked/_import_61ea3dd6ab62a0.19123787_preview.mp4"
+        }
         // muted={true}
         playing={playing}
         onProgress={handleProgess}

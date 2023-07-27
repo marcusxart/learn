@@ -5,7 +5,9 @@ const UserSwitchHeader = () => {
   const [switchUser, setSwitchUser] = useState(1);
   return (
     <Container>
-      <p>Frank Language Expert</p>
+      <div className="left">
+        <p>Frank Language Expert</p>
+      </div>
       <div className="btn__wrapper">
         <button
           className={switchUser === 1 ? "active" : ""}
@@ -35,9 +37,11 @@ const Container = styled.div`
   background: #ffffff;
   border-radius: 25px;
 
-  p {
-    font-size: 20px;
-    color: #00c2c2;
+  .left {
+    p {
+      font-size: 20px;
+      color: #00c2c2;
+    }
   }
 
   .btn__wrapper {

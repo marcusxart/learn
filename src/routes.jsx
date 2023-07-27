@@ -20,6 +20,7 @@ import AddStudent from "./pages/manage students/add student";
 import Announcements from "./pages/announcements";
 import AnnouncementPermission from "./pages/announcements/permission";
 import ArchiveStudents from "./pages/manage students/archive";
+import CourseParticipants from "./pages/manage courses/course participants";
 
 const routes = createBrowserRouter(
   [
@@ -54,6 +55,7 @@ const routes = createBrowserRouter(
             { path: "create-course", element: <CreateCourse /> },
             { path: "draft", element: <CourseDraft /> },
             { path: "details", element: <CourseDetails /> },
+            { path: "participants", element: <CourseParticipants /> },
           ],
         },
         {

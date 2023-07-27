@@ -1,8 +1,10 @@
 import { CourseTable } from "../../style/table.styled";
 import { StarIcon } from "../../../../assets/svg/star";
+import { useNavigate } from "react-router-dom";
 
 const ActiveCoursesTable = () => {
   const testArr = [1, 1, 1, 1];
+  const navigate = useNavigate();
   return (
     <CourseTable>
       <div className="table_header">
@@ -14,7 +16,13 @@ const ActiveCoursesTable = () => {
         <p className="sm">Size</p>
       </div>
       {testArr.map((item, idx) => (
-        <div className="table_row" key={idx}>
+        <div
+          className="table_row"
+          key={idx}
+          onClick={() =>
+            navigate("/manage-courses/details", { state: "active-row" })
+          }
+        >
           <p className="nowrap_text">French for Complete beginners</p>
           <p>Course 00{idx + 1}</p>
           <p>23 lessons</p>

@@ -23,9 +23,13 @@ export const CourseDetailsHeader = styled.div`
     svg {
       cursor: pointer;
     }
-    button {
-      box-shadow: 0px 7.72825813293457px 15.45651626586914px 0px
-        rgba(254, 191, 16, 0.25);
+    .btn_group {
+      display: flex;
+      gap: 20px;
+      button {
+        box-shadow: 0px 7.72825813293457px 15.45651626586914px 0px
+          rgba(254, 191, 16, 0.25);
+      }
     }
   }
 `;

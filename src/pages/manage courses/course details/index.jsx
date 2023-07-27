@@ -5,7 +5,7 @@ import {
   CourseDetailsMain,
   CourseDetailscontainer,
 } from "./style";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import CourseOverview from "./components/overview";
 import CourseModules from "./components/module";
@@ -16,6 +16,7 @@ import CourseAnalytics from "./components/analytics";
 
 const CourseDetails = () => {
   const navigate = useNavigate();
+  const { state } = useLocation();
   const [activeTab, setActiveTab] = useState("overview");
   return (
     <>
@@ -29,13 +30,25 @@ const CourseDetails = () => {
           </div>
           <div className="course_details_actions">
             {(activeTab === "overview" || activeTab === "analytics") && (
-              <ButtonComponent
-                text="Edit course"
-                styles={{
-                  padding: "5px 15px",
-                  fontSize: "14px",
-                }}
-              />
+              <div className="btn_group">
+                {state === "active-row" && activeTab === "overview" && (
+                  <ButtonComponent
+                    text="Participants"
+                    type="secondary"
+                    styles={{
+                      padding: "5px 15px",
+                      fontSize: "14px",
+                    }}
+                  />
+                )}
+                <ButtonComponent
+                  text="Edit course"
+                  styles={{
+                    padding: "5px 15px",
+                    fontSize: "14px",
+                  }}
+                />
+              </div>
             )}
             {activeTab === "module" && (
               <ButtonComponent

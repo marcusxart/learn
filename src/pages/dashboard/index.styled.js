@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const DashboardContainer = styled.div`
   color: #313333;
-  max-width: 824px;
   margin-left: auto;
   h1 {
     font-size: 22px;

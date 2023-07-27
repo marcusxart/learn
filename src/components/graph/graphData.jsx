@@ -125,7 +125,15 @@ function GraphData({ height, width }) {
     ],
   };
 
-  return <Line options={options} data={data} className="line_graph" />;
+  return (
+    <Line
+      options={options}
+      data={data}
+      className="line_graph"
+      height={height || "160px"}
+      width={width}
+    />
+  );
 }
 
 export default GraphData;
