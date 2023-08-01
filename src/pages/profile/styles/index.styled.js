@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  max-width: 824px;
   margin-left: auto;
   color: #313333;
   > .header {

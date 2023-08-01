@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 export const ProfileEditContainer = styled.div`
-  max-width: 824px;
   margin-left: auto;
   > .header {
     display: flex;

@@ -20,6 +20,7 @@ import TrashIcon2 from "../../../../../assets/svg/trashNoBorder";
 import DeleteCourseModal from "../deleteModal";
 import AddLessonModal from "../addLessonModal";
 import EditLessonModal from "../editLessonModal";
+import { useNavigate } from "react-router-dom";
 
 const ModuleItem = () => {
   const [isToggle, setIsToggle] = useState(false);
@@ -27,6 +28,7 @@ const ModuleItem = () => {
   const [deleteModal, setDeleteModal] = useState(false);
   const [addLesson, setAddLesson] = useState(false);
   const [editLesson, setEditLesson] = useState(false);
+  const navigate = useNavigate();
   const lessons = [
     "Greetings and salutation in French ",
     "Greetings and salutation in French ",
@@ -165,7 +167,9 @@ const ModuleItem = () => {
                   >
                     Add Lesson
                   </li>
-                  <li>Add Test</li>
+                  <li onClick={() => navigate("/manage-courses/add-test")}>
+                    Add Test
+                  </li>
                   <li>Add Module</li>
                 </ul>
               </div>

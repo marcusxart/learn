@@ -6,4 +6,5 @@ export const CourseModulesContainer = styled.div`
   flex-direction: column;
   width: 100%;
   gap: 35px;
+  margin-bottom: 150px;
 `;

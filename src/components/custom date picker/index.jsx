@@ -11,6 +11,7 @@ const CustomDatePicker = ({
   setDate,
   startDate,
   placeholder,
+  fit,
 }) => {
   const handleOnMonth = (value, decrease, increase) => {
     if (value === -1) {
@@ -34,7 +35,7 @@ const CustomDatePicker = ({
 
   return (
     <>
-      <Container>
+      <Container fit={fit}>
         <ReactDatePicker
           selected={date}
           startDate={startDate}
@@ -75,7 +76,7 @@ CustomDatePicker.prototype = {
 };
 
 const Container = styled.div`
-  width: 100%;
+  width: ${({ fit }) => (fit ? "fit-content" : "100%")};
   .react-datepicker-wrapper {
     display: block;
 

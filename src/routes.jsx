@@ -23,6 +23,10 @@ import ArchiveStudents from "./pages/manage students/archive";
 import CourseParticipants from "./pages/manage courses/course participants";
 import EditCourse from "./pages/manage courses/edit course";
 import AddTest from "./pages/manage courses/add test";
+import PracticeReading from "./pages/manage courses/practice reading";
+import WritingEssay from "./pages/manage courses/writing essay";
+import SoundPlay from "./pages/manage courses/sound play";
+import WordPlay from "./pages/manage courses/word play";
 
 const routes = createBrowserRouter(
   [
@@ -59,7 +63,16 @@ const routes = createBrowserRouter(
             { path: "draft", element: <CourseDraft /> },
             { path: "details", element: <CourseDetails /> },
             { path: "participants", element: <CourseParticipants /> },
-            { path: "add-test", element: <AddTest /> },
+            {
+              path: "test",
+              children: [
+                { path: "add-test", element: <AddTest /> },
+                { path: "writing-essay", element: <WritingEssay /> },
+                { path: "sound-play", element: <SoundPlay /> },
+                { path: "practice-reading", element: <PracticeReading /> },
+                { path: "word-play", element: <WordPlay /> },
+              ],
+            },
           ],
         },
         {
